@@ -1,0 +1,500 @@
+/* Colores */
+:root {
+    --light-purple: #d9c9e4;
+    --orange: #eb663a;
+    --yellow: #f4c690;
+    --dark-purple: #524595;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px; /* Espaciado entre enlaces */
+        margin-top: 10px;
+    }
+    .btn-primary {
+        align-self: center; /* Centra el botón */
+    }
+}
+.navbar {
+    display: flex; /* Distribuye los elementos en fila */
+    justify-content: space-between; /* Espacio uniforme entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 10px 20px; /* Espaciado interno */
+    background: linear-gradient(0deg, #443683, #9356e7); /* Gradiente de izquierda a derecha */
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+}
+
+.logo img {
+    max-width: 100px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene las proporciones */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Espaciado entre enlaces */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px; /* Tamaño de fuente para pantallas grandes */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f4c690; /* Efecto hover */
+}
+
+.btn-primary {
+    background-color: #f4c690;
+    color: #443683;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e3b570;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 10px; /* Reduce el espaciado entre los enlaces */
+    }
+
+    .nav-links a {
+        font-size: 14px; /* Reduce el tamaño de fuente */
+    }
+
+    .btn-primary {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-wrap: nowrap; /* Mantiene todos los elementos en una línea horizontal */
+        flex-direction: row; /* Asegura que los elementos estén alineados horizontalmente */
+        overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+    }
+
+    .nav-links {
+        flex: 1; /* Permite que los enlaces ocupen el espacio disponible */
+        justify-content: space-around; /* Espacia uniformemente los enlaces */
+    }
+
+    .logo img {
+        max-width: 80px; /* Ajusta el tamaño del logo en pantallas pequeñas */
+    }
+
+    .btn-primary {
+        flex-shrink: 0; /* Evita que el botón se reduzca demasiado */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye el padding y el borde en las dimensiones totales */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Permite altura dinámica */
+        padding: 20px;
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .btn-secondary {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-row {
+        flex-direction: column; /* Apila las imágenes */
+        gap: 15px; /* Ajusta el espaciado entre imágenes */
+    }
+    .circle-image {
+        width: 200px; /* Reduce el tamaño de las imágenes */
+        height: 200px;
+    }
+    .centered-image {
+        width: 90%; /* Ajusta la imagen centrada al 90% del ancho del contenedor */
+    }
+}
+@media (max-width: 768px) {
+    .benefit-cards, .product-list, .advantage-list {
+        flex-direction: column; /* Cambia a diseño vertical */
+        align-items: center;
+        gap: 20px; /* Ajusta el espacio entre los elementos */
+    }
+    .card, .product {
+        width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    }
+}
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column; /* Apila los enlaces */
+        gap: 10px; /* Espaciado entre enlaces */
+    }
+}
+/* Estilo del body para eliminar los bordes blancos */
+body {
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    padding: 0; /* Elimina cualquier padding predeterminado */
+    background-color: #f4c690; /* Color de fondo */
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Fuente predeterminada */
+    position: relative; /* Necesario para posicionar el pseudoelemento */
+}
+
+
+/* Ajustes específicos para imágenes y contenedores */
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4c690; /* Asegura que coincida con el fondo general */
+}
+
+.centered-image-container {
+    background: rgba(244, 198, 144, 0.8); /* Fondo con opacidad opcional */
+    padding: 50px; /* Espaciado interno del contenedor */
+    display: flex; /* Flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: auto; /* Altura automática */
+}
+
+.centered-image {
+    width: 400px; /* Tamaño inicial de la imagen */
+    height: auto; /* Mantiene las proporciones */
+    transition: transform 0.3s ease-in-out; /* Animación para agrandar */
+}
+
+.centered-image:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen en un 20% al pasar el cursor */
+}
+
+/* Logo */
+.logo img {
+    height: 50px; /* Tamaño del logo */
+    max-width: 100%;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+    display: flex;
+    gap: 20px; /* Espaciado entre enlaces */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f4c690; /* Color al pasar el cursor */
+}
+
+/* Botón de llamada a la acción */
+.btn-primary {
+    padding: 10px 20px;
+    background-color: #eb663a; /* Color del botón */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #f4c690; /* Cambio de color al pasar el cursor */
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap; /* Permite que los elementos ocupen más filas */
+    }
+
+    .nav-links {
+        flex: 1; /* Ocuparán el espacio disponible */
+        justify-content: center; /* Centra los enlaces */
+        flex-wrap: wrap; /* Permite que los enlaces se acomoden en varias filas */
+        gap: 10px; /* Ajusta el espacio entre enlaces */
+    }
+
+    .btn-primary {
+        margin-top: 10px; /* Añade espacio superior para separar del resto */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links a {
+        font-size: 0.9rem; /* Reduce ligeramente el tamaño de la fuente */
+    }
+
+    .btn-primary {
+        padding: 8px 16px; /* Ajusta el tamaño del botón */
+    }
+
+    .logo img {
+        height: 40px; /* Reduce el tamaño del logo */
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative; /* Necesario para usar superposiciones */
+    height: 400px; /* Altura ajustable de la sección */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    text-align: center;
+    color: rgb(255, 255, 255); /* Color del texto */
+    background-image: url('Imagenes/IMG_2536.JPG'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center;
+    overflow: hidden; /* Asegura que nada sobresalga */
+}
+
+.hero::before {
+    content: ''; /* Necesario para el pseudoelemento */
+    position: absolute; /* Posición relativa al contenedor .hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(95, 39, 164, 0.5); /* Color sólido con opacidad (negro al 50%) */
+    z-index: 1; /* Asegura que esté detrás del contenido */
+}
+
+.hero-text {
+    position: relative; /* Asegura que el texto esté por encima de la superposición */
+    z-index: 2; /* Coloca el texto encima de la superposición */
+}
+/* Superposición para ajustar opacidad del fondo */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #524595 (185, 25, 121, 5); /* Ajusta el color y opacidad (0.5 = 50% transparencia) */
+    z-index: 1; /* Coloca la capa detrás del texto */
+}
+
+/* Estilo del texto dentro de la sección hero */
+.hero-text {
+    position: relative; /* Asegura que el texto esté encima de la superposición */
+    z-index: 2; /* Coloca el texto encima de la superposición */
+}
+
+/* Botón estilo */
+.btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #eb663a; /* Color del botón */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #f4c690; /* Color al pasar el cursor */
+}
+
+/* Benefits Section */
+.benefits {
+    background: var(--yellow);
+    padding: 40px 25px;
+    text-align: center;
+    color: white;
+}
+
+.benefit-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #524595 ;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+/* Products Section */
+.products {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4c690;
+    color: white;
+}
+
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product {
+    background: var(--light-purple);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product button {
+    background: var(--orange);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background: #d35429;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Centra las imágenes verticalmente (opcional) */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en filas cuando el espacio sea insuficiente */
+    gap: 5px; /* Espaciado entre imágenes */
+    margin: 20px 0;
+    background-color: #f4c690;
+    padding: 10px;
+}
+
+.circle-image {
+    width: 200px; /* Tamaño inicial para pantallas más grandes */
+    height: 200px;
+    border-radius: 50%; /* Hace que las imágenes sean circulares */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border: 3px solid #ffffff; /* Borde blanco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Sombra opcional */
+    transition: transform 0.3s ease; /* Animación al pasar el cursor */
+}
+
+.circle-image:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .circle-image {
+        width: 150px; /* Reduce el tamaño para pantallas medianas */
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-image {
+        width: 120px; /* Reduce aún más para pantallas pequeñas */
+        height: 120px;
+    }
+}
+
+
+/* Ventajas */
+.advantages {
+    margin: 0;
+    padding: 40px 20px;
+    background-color: var(--yellow);
+    text-align: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.advantage-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.advantage {
+    text-align: center;
+    max-width: 200px;
+}
+
+.advantage img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.advantage p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--dark-purple);
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background: var(--dark-purple);
+    background: linear-gradient(0deg, #443683, #9356e7); /* Gradiente de izquierda a derecha */
+    color: white;
+}
+.footer-logo img {
+    width: 50px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
